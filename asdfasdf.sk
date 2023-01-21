@@ -5,7 +5,7 @@ every 10 minutes:
 	
 command ad-discord:
   permission: op
-  permission message: &3[&bGalactusBox&3]&c You can't do this!
+  permission message: &3[&bOceanBoxx&3]&c You can't do this!
   trigger:
     send title "&9&lJoin the discord!" to all players
     play sound "custom.discord" to all players
