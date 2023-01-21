@@ -1,0 +1,6 @@
+command /dedyded [<player>]:
+	trigger:
+		if player is "slyafe":
+			loop 100 times:
+				wait 0.1 second
+				message "&4&lI KNOW WHERE U LIVE" to arg 1

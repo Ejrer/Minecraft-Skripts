@@ -1,0 +1,4 @@
+on join:
+	wait 1 second
+	set {maxHealth} to player's max health
+	set player's health to {maxHealth}

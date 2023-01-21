@@ -1,0 +1,4 @@
+command apply:
+  trigger:
+    send "&6Join our &3Discord &6here and apply:"
+    send "&dhttps://discord.gg/uymaugRtQG"

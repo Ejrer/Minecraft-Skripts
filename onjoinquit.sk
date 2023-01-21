@@ -1,0 +1,8 @@
+on first join:
+	set join message to "&7Welcome &c%player% &7to &cGalactusBox"
+on join:
+	player has played before
+	set join message to "&7Welcome back, &c%player%!"
+
+on quit:
+	set quit message to "&c%player% &7left this awesome server!"

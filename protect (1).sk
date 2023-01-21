@@ -1,0 +1,30 @@
+# Created by Morpter
+
+on first join:
+  set {%player%.protected} to false
+  wait 1200 seconds
+  if {%player%.protected} is true:
+    set {%player%.protected} to false
+	  
+on damage:
+  if {%attacker%.protected} is true: 
+    cancel event
+    send "&3[&bGalactusBox&3]&d You have newbie protection!" to attacker
+  else if {%victim%.protected} is true:
+    cancel event
+    send "&3[&bGalactusBox&3]&d This player has newbie protection!" to attacker
+	  
+command newbie:
+  trigger:
+    if {%player%.protected} is true:
+      set {%player%.protected} to false
+      send "&3[&bGalactusBox&3]&d Newbie protection disabled!" to player
+    else:
+      send "&3[&bGalactusBox&3]&d Your newbie protection is already off!" to player
+	  
+command newbieall:
+  permission: op
+  permission message: &3[&bGalactusBox&3]&d You cannot do this command!
+  trigger:
+    loop all players:
+      set {%loop-player%.protected} to true

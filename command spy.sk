@@ -1,0 +1,38 @@
+command /commandspy [<player>]:
+	aliases: /cspy
+	permission: commandspy.use
+	permission message: &cYou don't have the required permission to perform this command.
+	trigger:
+		if arg 1 is set:
+			if arg 1 is online:
+				if {cs::%uuid of arg 1%} is set:
+					clear {cs::%uuid of arg 1%}
+					send "&cYou've disabled &f%arg 1's display name%'s &ccommand spy." to player
+					send "&cCommand spy has been disabled." to arg 1
+					stop
+				else:
+					set {cs::%uuid of arg 1%} to true
+					send "&aCommand spy has been enabled." to arg 1
+					send "&aYou've enabled &f%arg 1's display name%'s &acommand spy." to player
+					stop
+			else:
+				send "&cNo player with the name ""%arg 1%&c"" &cfound." to player
+		else:
+			if {cs::%uuid of player%} is set:
+				clear {cs::%uuid of player%}
+				send "&cCommand spy has been disabled." to player
+				stop
+			else:
+				set {cs::%uuid of player%} to true
+				send "&aCommand spy has been enabled." to player
+				stop
+				
+on command:
+	if sender is a player:
+		loop all players:
+			if {cs::%uuid of loop-player%} is set:
+				if "%player%" is not "%loop-player%":
+					send "&r%player's display name% &7executed the command &f/%complete command%&7." to loop-player
+
+on quit:
+	delete {cs::%uuid of player%}

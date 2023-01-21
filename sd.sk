@@ -1,0 +1,5 @@
+command sd [<player>] [<text>]:
+  permission: sd
+  permission message: &cYou cannot run this command!
+  trigger:
+    make arg-1 say arg-2

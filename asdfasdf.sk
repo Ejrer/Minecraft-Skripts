@@ -1,0 +1,23 @@
+every 10 minutes:
+	send title "&9&lJoin the discord!" to all players
+	play sound "custom.discord" to all players
+	send "&9&lJoin the discord&r<link:https://discord.gg/TDXQD8tN4Z> &b&lhere<reset>&9&l!" to all players
+	
+command ad-discord:
+  permission: op
+  permission message: &3[&bGalactusBox&3]&c You can't do this!
+  trigger:
+    send title "&9&lJoin the discord!" to all players
+    play sound "custom.discord" to all players
+    send "&9&lJoin the discord&r<link:https://discord.gg/TDXQD8tN4Z> &b&lhere<reset>&9&l!" to all players
+	
+command suggest [<text>]:
+  trigger:
+    if arg-1 is set:
+      send "&aDrop your paper into the suggestion area at spawn!" to player
+      drop paper named "&6%player%" with lore "&3%arg-1%" at {drop}
+    else:	
+      send "&cPlease specify a suggestion" to player
+		
+		
+		

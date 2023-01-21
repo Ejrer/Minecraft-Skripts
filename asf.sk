@@ -1,0 +1,6 @@
+on damage:
+  if attacker is player:
+    send "&l%damager% &4&lattacked you!" to victim
+    if victim is flying:
+      execute console command "fly %victim%"
+      send "&cNo fly flighting!" to victim

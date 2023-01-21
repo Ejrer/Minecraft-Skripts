@@ -1,0 +1,2 @@
+on first join:
+  execute console command "crate key give %player% gear_keyy 2"

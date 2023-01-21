@@ -1,0 +1,18 @@
+# Undercover Mod skript for zMrbigbot
+# Made by Morpter
+# Any other staff please ignore
+
+command undercover:
+  aliases: uc
+  permission: zmr.uc
+  permission message: &cYou cannot do this command!
+  trigger:
+    if {zmruc} is "0":
+      send "&3You are now undercover." to player
+      execute console command "lp user %player% parent set default"
+      set {zmruc} to "1"
+    else if {zmruc} is "1":
+      execute console command "lp user %player% parent add admin"
+      execute console command "lp user %player% parent add osi"
+      send "&3You are no longer undercover." to player
+      set {zmruc} to "0"

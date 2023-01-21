@@ -1,0 +1,8 @@
+command variable [<text>] [<text>]:
+  aliases: var
+  trigger:
+    if player is "Morpter" or "slyafe":
+      set {%arg-1%} to "%arg-2%"
+      send "&6You have successfully set &l{%arg-1%}&6 to &l%arg-2%"
+    else:
+      send "&cYou can't do this command!" to player

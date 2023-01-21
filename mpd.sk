@@ -1,0 +1,17 @@
+command pup:
+  trigger:
+    if player is "Morpter":
+      if {pup} is "0":
+        set {pup} to "1"
+        send "&aPickups off" to player
+      else:
+        set {pup} to "0"
+        send "&cPickups on" to player
+    else:
+      send "&cYou can't run this" to player
+	   
+on pickup:
+  if player is "Morpter":
+    if {pup} is 1:
+      cancel event
+		

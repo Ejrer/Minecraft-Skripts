@@ -1,0 +1,30 @@
+variables:
+    {%player%kills} = 0
+    {%player%kdr} = 0.0
+    {%player%deaths} = 0
+    {%player%streak} = 0
+    {%player%blocksBroken} = 0
+    {%player%blocksPlaced} = 0
+
+on death:
+    if victim is player:
+        send "&aYou killed %victim%" to damager
+        add 1 to {%damager%kills}
+        add 1 to {%damager%streak}
+        add 1 to {%victim%deaths}
+        set {%victim%kdr} to {%victim%kills} / {%victim%deaths}
+        set {%victim%streak} to 0
+        set {%damager%kdr} to {%damager%kills} / {%damager%deaths}
+        give damager lapis lazuli named "&3&lPVP Token"
+on block break:
+	add 1 to {%player%blocksBroken}
+on block place:
+	add 1 to {%player%blocksPlaced}
+
+command /kills:
+    trigger:
+        send "kills: %{%player%kills}%, kdr: %{%player%kdr}%" to player
+command /kreset <player>:
+    permission:killcounter.killreset
+    trigger:
+        set {%arg-1%kills} to 0

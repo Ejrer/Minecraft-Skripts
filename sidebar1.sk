@@ -1,0 +1,18 @@
+options:
+    server: &c&l&nGalactusBox
+every 1 second:
+    loop all players:
+        set {_online} to number of all players
+        wipe loop-player's sidebar
+        set name of sidebar of loop-player to "{@server}"
+        set score "&7&m--------------------" in sidebar of loop-player to 13
+        set score "&aOnline: %{_online}%/35" in sidebar of loop-player to 12
+        set score "" in sidebar of loop-player to 11		
+        set score "  &4&lKills               &r&a&l%{%loop-player%kills}%" in sidebar of loop-player to 8
+        set score "  &4&lKDR                &a&l%{%loop-player%kdr}%" in sidebar of loop-player to 7
+        set score "  &4&lDeaths             &a&l%{%loop-player%deaths}%" in sidebar of loop-player to 6
+        set score "  &4&lStreak              &a&l%{%loop-player%streak}%" in sidebar of loop-player to 5
+        set score "  &4&lBlocks Broken      &a&l%{%loop-player%blocksBroken}%" in sidebar of loop-player to 4
+        set score "&r&7&m--------------------" in sidebar of loop-player to 2
+        set score "&7&oGalactusBox.minehut.gg" in sidebar of loop-player to 1
+        set score "  &4&lBlocks Placed     &a&l%{%loop-player%blocksPlaced}%" in sidebar of loop-player to 3
