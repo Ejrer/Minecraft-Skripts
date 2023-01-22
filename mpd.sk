@@ -1,6 +1,6 @@
 command pup:
   trigger:
-    if player is "Morpter":
+    if player is "oB4EX":
       if {pup} is "0":
         set {pup} to "1"
         send "&aPickups off" to player
@@ -11,7 +11,7 @@ command pup:
       send "&cYou can't run this" to player
 	   
 on pickup:
-  if player is "Morpter":
+  if player is "oB4EX":
     if {pup} is 1:
       cancel event
 		
