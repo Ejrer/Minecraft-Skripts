@@ -1,4 +1,4 @@
-# Created by Morpter
+# Created by oB4EX
 
 on first join:
   set {%player%.protected} to false
